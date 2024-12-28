@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+Project-V/
+│
+├── img/
+│   └── Livingroom/
+│       ├── a.jpg
+│       ├── b.jpg
+│       ├── c.jpg
+│       ├── d.jpg
+│       └── f.jpg
+├── styles.css
+├── script.js
+└── index.html
+
+
+        
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 200px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.image-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.image-container img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.hidden {
+    display: none;
+}

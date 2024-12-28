@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Alternator</title>
+    <style>
+        .image-container img {
+            height: 150px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" id="budget" placeholder="Enter your budget">
+    <button id="filterButton">Filter</button>
+
+    <div id="imageContainer" class="image-container"></div>
+
+    <script>
+        // Define two sets of images
+        const imgList1 = ["img1.jpg", "img2.jpg", "img3.jpg"];
+        const imgList2 = ["img4.jpg", "img5.jpg", "img6.jpg"];
+
+        let currentSet = 0; // To keep track of which set to display
+
+        document.getElementById('filterButton').addEventListener('click', function (event) {
+            event.preventDefault();
+
+            const budget = document.getElementById('budget').value;
+            const imageContainer = document.getElementById('imageContainer');
+
+            // Clear previous images
+            imageContainer.innerHTML = '';
+
+            // Check if the budget is valid
+            if (budget > 0) {
+                const imagesToShow = Math.min(Math.floor(budget / 100), 3); // Display up to 3 images based on budget
+                let imgList = currentSet === 0 ? imgList1 : imgList2; // Alternate between imgList1 and imgList2
+
+                for (let i = 0; i < imagesToShow; i++) {
+                    const img = document.createElement('img');
+                    img.src = `C:/Users/Admin/OneDrive/Desktop/Project-V/img/Livingroom/${img}.jpg";` // Use the correct image path
+                    imageContainer.appendChild(img);
+                }
+
+                // Toggle between image sets
+                currentSet = currentSet === 0 ? 1 : 0;
+
+            } else {
+                alert('Please enter a valid budget!');
+            }
+        });
+    </script>
+
+</body>
+</html>
